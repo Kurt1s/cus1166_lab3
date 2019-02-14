@@ -1,24 +1,23 @@
 import sys
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from models import *
 from config import Config
+from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.debug = True
+db = SQLAlchemy(app)
+migrate = Migrate(app, db) # this
 db.init_app(app)
 
+app.config.from_object(Config)
+
 @app.route("/")
-def index(): 
+def index():
     courses = Course.query.all()
     render_template("index.html", courses = courses)
 
-
-
-
-
-
-
-if name == "main":
+if __name__ == "__main__":
     with app.app_context():
-        main()
+        app.run(debug = True)

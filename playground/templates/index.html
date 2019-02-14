@@ -1,11 +1,11 @@
-{% extends "layout.html"}
+{% extends "layout.html"%}
 
-{%block courses %}
 <ul>
+{% block courses %}
     <li>
         {% for course in courses %}
             {{course}}
         {% endfor %}
     </li>
-</ul>
 {% endblock %}
+</ul>
