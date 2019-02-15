@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "/home/kurtis/.local/share/virtualenvs/cus1166_lab3-jPe9o_Pr/bin/python"
+    "python.pythonPath": "/home/kurtis/.local/share/virtualenvs/cus1166_lab3-jPe9o_Pr/bin/python",
+    "python.linting.mypyEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true
 }
