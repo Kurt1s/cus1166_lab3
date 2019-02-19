@@ -27,10 +27,19 @@ def index():
     return render_template("index.html", courses = courses)
     # return render_template("index.html")
 
-# @app.route("/add_course")
-# def index():
-#     return render_template("index.html")
-    
+@app.route("/add_course", methods = ["post"])
+def add_flight():
+    course_id = request.form.get("course_id")
+    course_number = request.form.get("course_number")
+    course_title = request.form.get("course_title")
+    course = Course(course_id = course_id, course_number=course_number, course_title=course_title)
+
+    db.session.add(flight)
+    db.session.commit()
+    courses = Course.query.all()
+    return render_template('index.html', courses = courses)
+
+
 if __name__ == "__main__":
     with app.app_context():
         app.run(debug = True)
