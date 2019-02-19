@@ -1,8 +1,10 @@
 from flask_sqlalchemy import SQLAlchemy
-from app import *
+from app import app
+import os, csv, sys
 
-db = SQLAlchemy()
-
+db = SQLAlchemy(app)
+basedir = os.path.abspath(os.path.dirname(__file__))
+DATABASE_URL = 'sqlite:///' + os.path.join(basedir, 'app.db')
 
 class Course(db.Model):
     __tablename__ = "course"

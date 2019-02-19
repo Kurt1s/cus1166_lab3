@@ -4,7 +4,7 @@
 {% block courses %}
     <li>
         {% for course in courses %}
-            {{course}}
+            {{course[0]}}: {{course[1]}}<br>
         {% endfor %}
     </li>
 {% endblock %}

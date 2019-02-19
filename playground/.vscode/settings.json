@@ -1,0 +1,6 @@
+{
+    "python.linting.mypyEnabled": false,
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/kurtis/.local/share/virtualenvs/playground-CW9cGZ8e/bin/python"
+}
