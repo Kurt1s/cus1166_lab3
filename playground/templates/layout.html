@@ -4,16 +4,12 @@
     <title>Lab 3</title>
 </head>
 <body>
-    WELCOME
+    The courses are as follows:
     {% block courses %}
     {% endblock %}
-
-    <form method="post" action="{{ url_for('add_flight') }}">
-            <input type="text" name="course_number">
-            <input type="text" name="course_title">
-        <button type="submit" >Enter Data</button>
-    </form>
     
+    {% block content %}
+    {% endblock %}
     
 </body>
 </html>

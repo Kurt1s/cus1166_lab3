@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="{{ url_for('add_flight') }}">
+        <!-- <input type="text" name="course_id">
+        <input type="text" name="course_number">
+        <input type="text" name="course_title">
+    <button type="submit" >Enter Data</button> -->
+    <p>
+        {{ form.course_id.label }}<br>
+        {{ form.course_id(size=32) }}<br>
+        test
+    </p>
+
+</form>
+{% endblock %}

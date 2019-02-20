@@ -1,9 +1,10 @@
 import sys
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from models import *
 from config import Config
 from flask_migrate import Migrate
+
 
 c1 = ('Software Engineering', 1166)
 c2 = ('Art History', 1050)
@@ -37,7 +38,7 @@ def add_flight():
     db.session.add(flight)
     db.session.commit()
     courses = Course.query.all()
-    return render_template('index.html', courses = courses)
+    return render_template('add_flight.html', courses = courses, form=form)
 
 
 if __name__ == "__main__":
