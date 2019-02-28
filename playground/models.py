@@ -1,8 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
-from app import app
+from app import db
 import os, csv, sys
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 basedir = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URL = 'sqlite:///' + os.path.join(basedir, 'app.db')
 
