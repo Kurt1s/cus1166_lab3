@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from models import *
 from config import Config
 from flask_migrate import Migrate
+from forms import NewCourseForm
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -23,8 +24,18 @@ courses = [c1,c2,c3,c4,c5]
 
 @app.route("/")
 def index():
-    return render_template("index.html", courses = courses)
-    # return render_template("index.html")
+    course_form = NewCourseForm()
+    if course_form.validate_on_submit():
+        course_class_id = course_form.class_id.data
+        course_course_name = course_form.course_name.data
+        course_course_num = course_form.course_num.data
+        return redirect(url_for('add_course',
+        course_class_id = course_class_id,
+        course_num = course_num, course_name = course_name))
+    # courses = Course.query.all()
+    return render_template('index.html', course_form = course_form, courses = courses)
+
+    # return render_template("index.html", courses = courses)
 
 @app.route("/add_course", methods = ["post"])
 def add_flight():
